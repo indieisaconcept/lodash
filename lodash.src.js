@@ -276,7 +276,7 @@
    * The `this` value is used if it's the global object to avoid Greasemonkey's
    * restricted `window` object, otherwise the `window` object is used.
    */
-  var root = freeGlobal || ((freeWindow !== (this && this.window)) && freeWindow) || freeSelf || this;
+  var root = freeGlobal || ((freeWindow !== (this && this.window)) && freeWindow) || freeSelf || Function('return this')();
 
   /*--------------------------------------------------------------------------*/
 
